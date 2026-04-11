@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朗斯代尔 插件源</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            background-color: #f4f4f7;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #000;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .btn {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #007aff;
+            border-radius: 8px;
+        }
+
+        .btn-sileo {
+            background-color: #607d8b;
+        }
+
+        .fix-section {
+            max-width: 400px;
+            margin: 16px auto 0;
+            padding: 16px 20px;
+            background-color: #fff;
+            border: 1px solid #f1d0d0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-fix {
+            background-color: #d32f2f;
+        }
+
+        .btn-secondary {
+            background-color: #8e8e93;
+        }
+
+        .manual-url {
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        .fix-note {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💎 朗斯代尔</h1>
+        <p>欢迎访问我的私人越狱插件仓库</p>
+        <hr color="#eee" size="1">
+
+        <a class="btn" href="cydia://url/https://cydia.saurik.com/api/share?u=https://repo.lonsdaleite.cc/">添加到 Cydia</a>
+        <a class="btn btn-sileo" href="sileo://source/https://repo.lonsdaleite.cc/">添加到 Sileo</a>
+
+        <p class="manual-url">
+            手动添加地址：<br>
+            <strong>https://repo.lonsdaleite.cc</strong>
+        </p>
+    </div>
+
+    <div class="fix-section">
+        <p style="color: #d32f2f; font-weight: bold; margin-bottom: 5px;">⚠️ 旧设备无法刷新源？</p>
+        <p style="font-size: 12px;">如果提示 SSL 错误，请先安装证书包，或单独下载常用根证书：</p>
+
+        <a class="btn btn-fix" href="/tlsroot-reference/beeg.mobileconfig">下载 iOS 证书包</a>
+        <a class="btn btn-secondary" href="/tlsroot-reference/isrgrootx1.der">单独下载 ISRG Root X1</a>
+        <a class="btn btn-secondary" href="/certificates/">查看完整证书列表</a>
+
+        <p class="fix-note">安装后请在：设置 &gt; 通用 &gt; 关于本机 &gt; 证书信任设置 中开启完全信任。若系统版本较老，优先尝试证书包。</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 朗斯代尔 - 自豪地由 Nginx 驱动
+    </div>
+</body>
+</html>
