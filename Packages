@@ -79,3 +79,17 @@ Priority: standard
 Description: SSL library and cryptographic tools
 Name: OpenSSL
 
+Package: com.coolbooter.coolbooter
+Name: CoolBooter
+Depends: xpwn, zip, unzip, ldid, diskdev-cmds, firmware (>= 7.0)
+Version: 1.4.1-release
+Architecture: iphoneos-arm
+Description: CoolBooter is an all-in-one dual booting utility for jailbroken 32 bit iOS devices.
+Maintainer: CoolBooter <coolbooterios@gmail.com>
+Author: CoolBooter <coolbooterios@gmail.com>
+Filename: debs/com.coolbooter.coolbooter-1.4.1-release.deb
+Size: 20753350
+MD5sum: 4c0fc2637efed8d247996b100e11214a
+SHA1: 45f3e3a12134b9d043c54d4dea2485a67ce8d20c
+SHA256: eb76880df2eeebfffc6d815f8c5699abc05b790e8300f397abd1487460d7b929
+Section: System
