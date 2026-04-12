@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lonsdaleite Repo</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            padding: 20px;
+            padding: 12px;
             font-family: sans-serif;
             background-color: #f4f4f7;
             color: #333;
@@ -15,6 +19,7 @@
         }
 
         .page {
+            width: 100%;
             max-width: 440px;
             margin: 0 auto;
         }
@@ -50,6 +55,7 @@
         }
 
         .container {
+            width: 100%;
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
@@ -86,6 +92,7 @@
         }
 
         .fix-section {
+            width: 100%;
             max-width: 400px;
             margin: 16px auto 0;
             padding: 16px 20px;
@@ -114,6 +121,7 @@
         }
 
         .ipa-section {
+            width: 100%;
             max-width: 400px;
             margin: 16px auto 0;
             padding: 16px 20px;
@@ -168,6 +176,24 @@
             border: 0;
             border-top: 1px solid #eee;
             margin: 16px 0;
+        }
+
+        @media screen and (max-width: 360px) {
+            body {
+                padding: 8px;
+            }
+
+            .container,
+            .fix-section,
+            .ipa-section {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .btn {
+                font-size: 15px;
+                padding: 11px;
+            }
         }
 
     </style>
