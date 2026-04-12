@@ -1,3 +1,66 @@
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified, ellekit (< 1.1)
+Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.2)
+Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Homepage: https://cydia.akemi.ai/
+Provides: appsync, net.angelxwind.appsyncunified
+Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+Package: ai.akemi.appsyncunified
+Name: AppSync Unified
+Description: Enables the ability to install unsigned/fakesigned iOS applications.
+Section: Tweaks
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Architecture: iphoneos-arm
+Version: 116.0
+Installed-Size: 636
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm.akemi-git-235aca6cddfbdc9fa87fcb5b2aec2df37ed6d65a.deb
+Size: 51658
+MD5sum: 536009a11dad57e48a5563224eaffaff
+SHA1: e0fa412cb3c26718887edd834804c88909297079
+SHA256: 0036f28fcbdb165d4f58968a237ca9fe7b6ed33fea25b9a5eb1fc141f6bf5a09
+
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified, ellekit (< 1.1)
+Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.2)
+Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Homepage: https://cydia.akemi.ai/
+Provides: appsync, net.angelxwind.appsyncunified
+Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+Package: ai.akemi.appsyncunified
+Name: AppSync Unified
+Description: Enables the ability to install unsigned/fakesigned iOS applications.
+Section: Tweaks
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Architecture: iphoneos-arm64
+Version: 116.0
+Installed-Size: 668
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm64.akemi-git-235aca6cddfbdc9fa87fcb5b2aec2df37ed6d65a.deb
+Size: 49472
+MD5sum: d6a31911e878b83e47c6525fa29ecef1
+SHA1: d00d2667c0d5421dddfc70a2734f1d63b972a535
+SHA256: 2bdaac72a6d1b006309b7dd28f51b1e3d351d3d8758fc9f08ca670f1d71eb382
+
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178
+Depends: firmware (>= 8.0), mobilesubstrate
+Maintainer:  91手机论坛技术组 <ibbs.91.com>
+Homepage: http://apt.so/index.php?r=read&id=5593c4c10e1d157b6a8b4ffa
+Package:  com.91.appsyncunified.fengsync8
+Name: Appsync for iOS8.0-8.4
+Architecture: iphoneos-arm
+Description: Appsync是iPhone、iPad、iPod touch越狱后必装补丁，安装后可以绕过系统验证，随意安装运行破解的ipa软件，此版本完美兼容 iOS 8.0 ~ iOS 8.4。 
+Section:  91助手-补丁
+Author: WeiPhone.com <support@office.weiphone.com>
+Version: 6.0.0-1
+Installed-Size: 220
+Priority: standard
+Essential: no
+Tag: role::enduser
+Filename: debs/appsync%20ios8.deb
+Size: 28040
+MD5sum: d1490b79a602dafdc11b4aee453eb2f2
+SHA1: b142c36b3be2c8db47506f039e893f1838026175
+SHA256: 8b055f8cc34b7b13ade83a0c3c9224cc489ded79e719e88ea5af9f513c2924c2
+
 Package: com.coolbooter.cbuntether
 Name: CoolBooter Untetherer
 Depends: mobilesubstrate
@@ -15,21 +78,6 @@ MD5sum: 41731a3a85e57af4e98653cce88dc419
 SHA1: 05e010563d17ab831e9047b68e2d1c1140667078
 SHA256: 2adb5e835a46bddfeccaa569906430f3fb1749cfa32f2fcb0a53b37cb418e9f9
 
-Package: com.coolbooter.coolbooter141
-Name: CoolBooter 1.4.1
-Depends: xpwn, zip, unzip, ldid, diskdev-cmds, firmware (>= 7.0)
-Version: 1.4.1-release
-Architecture: iphoneos-arm
-Description: CoolBooter is an all-in-one dual booting utility for jailbroken 32 bit iOS devices.
-Maintainer: CoolBooter <coolbooterios@gmail.com>
-Author: CoolBooter <coolbooterios@gmail.com>
-Section: System
-Filename: debs/com.coolbooter.coolbooter141_1.4.1-release_iphoneos-arm.deb
-Size: 20744448
-MD5sum: a82ef371b5824d1f7e5d0b9bc19ddc18
-SHA1: 6309110af110763e314bb7c950e28595f8e554b1
-SHA256: b8ba056b81594b4c512511d41ba90c44a629aaca592248786ecf9b5012d4baae
-
 Package: com.coolbooter.coolbooter
 Name: CoolBooter
 Depends: xpwn, zip, unzip, ldid, diskdev-cmds, firmware (>= 7.0)
@@ -44,6 +92,21 @@ Size: 33805256
 MD5sum: a9a390a10541ccaf617a901118554ec9
 SHA1: c713f8ac4e1ffd266f6d8bdd3c41f7bea8a22b3f
 SHA256: a1cc1907e4c0a62325ddf0654796dcaa3623ea57db0c9456125c9e0744caa1c3
+
+Package: com.coolbooter.coolbooter141
+Name: CoolBooter 1.4.1
+Depends: xpwn, zip, unzip, ldid, diskdev-cmds, firmware (>= 7.0)
+Version: 1.4.1-release
+Architecture: iphoneos-arm
+Description: CoolBooter is an all-in-one dual booting utility for jailbroken 32 bit iOS devices.
+Maintainer: CoolBooter <coolbooterios@gmail.com>
+Author: CoolBooter <coolbooterios@gmail.com>
+Section: System
+Filename: debs/com.coolbooter.coolbooter141_1.4.1-release_iphoneos-arm.deb
+Size: 20744448
+MD5sum: a82ef371b5824d1f7e5d0b9bc19ddc18
+SHA1: 6309110af110763e314bb7c950e28595f8e554b1
+SHA256: b8ba056b81594b4c512511d41ba90c44a629aaca592248786ecf9b5012d4baae
 
 Package: com.coolbooter.coolbootercli
 Name: CoolBooter CLI
