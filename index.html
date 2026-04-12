@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朗斯代尔 插件源</title>
+    <title>Lonsdaleite Repo</title>
     <style>
         body {
             margin: 0;
@@ -12,6 +12,41 @@
             background-color: #f4f4f7;
             color: #333;
             text-align: center;
+        }
+
+        .page {
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            padding: 3px;
+            border: 1px solid #d6d6db;
+            border-radius: 999px;
+            background-color: #fff;
+        }
+
+        .lang-switcher button {
+            border: 0;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: transparent;
+            color: #666;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .lang-switcher button.is-active {
+            background-color: #007aff;
+            color: #fff;
         }
 
         .container {
@@ -129,61 +164,170 @@
             color: #aaa;
         }
 
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 16px 0;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>💎 朗斯代尔</h1>
-        <p>欢迎访问我的私人越狱插件仓库</p>
-        <hr color="#eee" size="1">
+    <div class="page">
+        <div class="topbar">
+            <div class="lang-switcher" aria-label="Language switcher">
+                <button type="button" data-lang-button="en">EN</button>
+                <button type="button" data-lang-button="zh-CN">中文</button>
+            </div>
+        </div>
 
-        <a class="btn" href="cydia://url/https://cydia.saurik.com/api/share?u=https://repo.lonsdaleite.cc/">添加到 Cydia</a>
-        <a class="btn btn-sileo" href="sileo://source/https://repo.lonsdaleite.cc/">添加到 Sileo</a>
+        <div class="container">
+            <h1 data-i18n="brand">💎 Lonsdaleite</h1>
+            <p data-i18n="intro">Welcome to my private jailbreak repository.</p>
+            <hr>
 
-        <p class="manual-url">
-            手动添加地址：<br>
-            <strong>https://repo.lonsdaleite.cc</strong>
-        </p>
+            <a class="btn" href="cydia://url/https://cydia.saurik.com/api/share?u=https://repo.lonsdaleite.cc/" data-i18n="addCydia">Add to Cydia</a>
+            <a class="btn btn-sileo" href="sileo://source/https://repo.lonsdaleite.cc/" data-i18n="addSileo">Add to Sileo</a>
+
+            <p class="manual-url">
+                <span data-i18n="manualUrlLabel">Manual source URL:</span><br>
+                <strong>https://repo.lonsdaleite.cc</strong>
+            </p>
+        </div>
+
+        <div class="fix-section">
+            <p style="color: #d32f2f; font-weight: bold; margin-bottom: 5px;" data-i18n="fixTitle">⚠️ Having trouble refreshing the repo on older devices?</p>
+            <p style="font-size: 12px;" data-i18n="fixSubtitle">If you see SSL errors, install the certificate bundle first, or download a common root certificate separately.</p>
+
+            <a class="btn btn-fix" href="/tlsroot-reference/beeg.mobileconfig" data-i18n="downloadBundle">Download iOS Certificate Bundle</a>
+            <a class="btn btn-secondary" href="/tlsroot-reference/isrgrootx1.der" data-i18n="downloadRoot">Download ISRG Root X1</a>
+            <a class="btn btn-secondary" href="/certificates/" data-i18n="viewCerts">View Full Certificate List</a>
+
+            <p class="fix-note" data-i18n="fixNote">After installation, enable full trust in Settings &gt; General &gt; About &gt; Certificate Trust Settings. On very old iOS versions, try the certificate bundle first.</p>
+        </div>
+
+        <div class="ipa-section">
+            <h2 class="section-title" data-i18n="ipaTitle">IPA Hosting</h2>
+            <p class="section-subtitle" data-i18n="ipaSubtitle">This section provides IPA files for jailbroken devices, suitable for AppSync, Filza, or other local installation methods.</p>
+
+            <a class="btn btn-download" href="/Phoenix6.ipa" download data-i18n="downloadPhoenix">Download Phoenix 6.0 IPA</a>
+
+            <ul class="meta-list">
+                <li data-i18n="metaName">App Name: Phœnix</li>
+                <li data-i18n="metaBundle">Bundle ID: supplies.wall.phoenix</li>
+                <li data-i18n="metaSize">File Size: about 22 MB</li>
+                <li data-i18n="metaSha">SHA-256: d7e5e84e4081b6e138d2f3ed5bb68ff944164e7483a9962c32b08b37e57fa161</li>
+            </ul>
+
+            <ol class="step-list">
+                <li data-i18n="step1">Tap download on your jailbroken device and save the IPA file.</li>
+                <li data-i18n="step2">Open it with Filza, AppInst, or another installed local installer.</li>
+                <li data-i18n="step3">If installation fails, make sure AppSync or an equivalent patch is already installed.</li>
+            </ol>
+
+            <p class="ipa-link">
+                <span data-i18n="directLinkLabel">Direct link:</span><br>
+                <strong>https://repo.lonsdaleite.cc/Phoenix6.ipa</strong>
+            </p>
+        </div>
+
+        <div class="footer" data-i18n="footer">
+            &copy; 2026 Lonsdaleite - Proudly powered by Nginx
+        </div>
     </div>
 
-    <div class="fix-section">
-        <p style="color: #d32f2f; font-weight: bold; margin-bottom: 5px;">⚠️ 旧设备无法刷新源？</p>
-        <p style="font-size: 12px;">如果提示 SSL 错误，请先安装证书包，或单独下载常用根证书：</p>
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "Lonsdaleite Repo",
+                brand: "💎 Lonsdaleite",
+                intro: "Welcome to my private jailbreak repository.",
+                addCydia: "Add to Cydia",
+                addSileo: "Add to Sileo",
+                manualUrlLabel: "Manual source URL:",
+                fixTitle: "⚠️ Having trouble refreshing the repo on older devices?",
+                fixSubtitle: "If you see SSL errors, install the certificate bundle first, or download a common root certificate separately.",
+                downloadBundle: "Download iOS Certificate Bundle",
+                downloadRoot: "Download ISRG Root X1",
+                viewCerts: "View Full Certificate List",
+                fixNote: "After installation, enable full trust in Settings > General > About > Certificate Trust Settings. On very old iOS versions, try the certificate bundle first.",
+                ipaTitle: "IPA Hosting",
+                ipaSubtitle: "This section provides IPA files for jailbroken devices, suitable for AppSync, Filza, or other local installation methods.",
+                downloadPhoenix: "Download Phoenix 6.0 IPA",
+                metaName: "App Name: Phœnix",
+                metaBundle: "Bundle ID: supplies.wall.phoenix",
+                metaSize: "File Size: about 22 MB",
+                metaSha: "SHA-256: d7e5e84e4081b6e138d2f3ed5bb68ff944164e7483a9962c32b08b37e57fa161",
+                step1: "Tap download on your jailbroken device and save the IPA file.",
+                step2: "Open it with Filza, AppInst, or another installed local installer.",
+                step3: "If installation fails, make sure AppSync or an equivalent patch is already installed.",
+                directLinkLabel: "Direct link:",
+                footer: "© 2026 Lonsdaleite - Proudly powered by Nginx"
+            },
+            "zh-CN": {
+                pageTitle: "朗斯代尔 插件源",
+                brand: "💎 朗斯代尔",
+                intro: "欢迎访问我的私人越狱插件仓库",
+                addCydia: "添加到 Cydia",
+                addSileo: "添加到 Sileo",
+                manualUrlLabel: "手动添加地址：",
+                fixTitle: "⚠️ 旧设备无法刷新源？",
+                fixSubtitle: "如果提示 SSL 错误，请先安装证书包，或单独下载常用根证书：",
+                downloadBundle: "下载 iOS 证书包",
+                downloadRoot: "单独下载 ISRG Root X1",
+                viewCerts: "查看完整证书列表",
+                fixNote: "安装后请在：设置 > 通用 > 关于本机 > 证书信任设置 中开启完全信任。若系统版本较老，优先尝试证书包。",
+                ipaTitle: "IPA 托管",
+                ipaSubtitle: "这里提供越狱设备可直接下载的 IPA 文件，适合配合 AppSync、Filza 或其他本地安装方式使用。",
+                downloadPhoenix: "下载 Phoenix 6.0 IPA",
+                metaName: "应用名称：Phœnix",
+                metaBundle: "Bundle ID：supplies.wall.phoenix",
+                metaSize: "文件大小：约 22 MB",
+                metaSha: "SHA-256：d7e5e84e4081b6e138d2f3ed5bb68ff944164e7483a9962c32b08b37e57fa161",
+                step1: "在越狱设备上点击下载，保存 IPA 文件。",
+                step2: "使用 Filza、AppInst 或其他已安装的本地安装工具打开该文件。",
+                step3: "如果安装失败，请先确认设备已安装 AppSync 或等效补丁。",
+                directLinkLabel: "直链地址：",
+                footer: "© 2026 朗斯代尔 - 自豪地由 Nginx 驱动"
+            }
+        };
 
-        <a class="btn btn-fix" href="/tlsroot-reference/beeg.mobileconfig">下载 iOS 证书包</a>
-        <a class="btn btn-secondary" href="/tlsroot-reference/isrgrootx1.der">单独下载 ISRG Root X1</a>
-        <a class="btn btn-secondary" href="/certificates/">查看完整证书列表</a>
+        const defaultLanguage = "en";
+        const supportedLanguages = Object.keys(translations);
+        const languageButtons = document.querySelectorAll("[data-lang-button]");
+        const translatableNodes = document.querySelectorAll("[data-i18n]");
 
-        <p class="fix-note">安装后请在：设置 &gt; 通用 &gt; 关于本机 &gt; 证书信任设置 中开启完全信任。若系统版本较老，优先尝试证书包。</p>
-    </div>
+        function applyLanguage(language) {
+            const dictionary = translations[language] || translations[defaultLanguage];
 
-    <div class="ipa-section">
-        <h2 class="section-title">IPA 托管</h2>
-        <p class="section-subtitle">这里提供越狱设备可直接下载的 IPA 文件，适合配合 AppSync、Filza 或其他本地安装方式使用。</p>
+            document.documentElement.lang = language;
+            document.title = dictionary.pageTitle;
 
-        <a class="btn btn-download" href="/Phoenix6.ipa" download>下载 Phoenix 6.0 IPA</a>
+            translatableNodes.forEach((node) => {
+                const key = node.dataset.i18n;
+                if (dictionary[key]) {
+                    node.textContent = dictionary[key];
+                }
+            });
 
-        <ul class="meta-list">
-            <li>应用名称：Phœnix</li>
-            <li>Bundle ID：supplies.wall.phoenix</li>
-            <li>文件大小：约 22 MB</li>
-            <li>SHA-256：d7e5e84e4081b6e138d2f3ed5bb68ff944164e7483a9962c32b08b37e57fa161</li>
-        </ul>
+            languageButtons.forEach((button) => {
+                button.classList.toggle("is-active", button.dataset.langButton === language);
+                button.setAttribute("aria-pressed", button.dataset.langButton === language ? "true" : "false");
+            });
 
-        <ol class="step-list">
-            <li>在越狱设备上点击下载，保存 IPA 文件。</li>
-            <li>使用 Filza、AppInst 或其他已安装的本地安装工具打开该文件。</li>
-            <li>如果安装失败，请先确认设备已安装 AppSync 或等效补丁。</li>
-        </ol>
+            localStorage.setItem("preferred-language", language);
+        }
 
-        <p class="ipa-link">
-            直链地址：<br>
-            <strong>https://repo.lonsdaleite.cc/Phoenix6.ipa</strong>
-        </p>
-    </div>
+        const savedLanguage = localStorage.getItem("preferred-language");
+        const initialLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : defaultLanguage;
 
-    <div class="footer">
-        &copy; 2026 朗斯代尔 - 自豪地由 Nginx 驱动
-    </div>
+        languageButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                applyLanguage(button.dataset.langButton);
+            });
+        });
+
+        applyLanguage(initialLanguage);
+    </script>
 </body>
 </html>
