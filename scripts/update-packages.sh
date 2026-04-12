@@ -6,7 +6,15 @@ ROOT_DIR=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
 DEBS_DIR="$ROOT_DIR/debs"
 PACKAGES_FILE="$ROOT_DIR/Packages"
 PACKAGES_GZ_FILE="$ROOT_DIR/Packages.gz"
+RELEASE_FILE="$ROOT_DIR/Release"
 TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/saveios6-packages.XXXXXX")
+REPO_NAME=${REPO_NAME:-Lonsdaleite}
+REPO_DESCRIPTION=${REPO_DESCRIPTION:-Lonsdaleite package repository}
+REPO_SUITE=${REPO_SUITE:-stable}
+REPO_CODENAME=${REPO_CODENAME:-ios6things}
+REPO_VERSION=${REPO_VERSION:-1.0}
+REPO_ARCHITECTURES=${REPO_ARCHITECTURES:-iphoneos-arm iphoneos-arm64}
+REPO_COMPONENTS=${REPO_COMPONENTS:-main}
 
 cleanup() {
     rm -rf "$TMP_DIR"
@@ -49,6 +57,31 @@ file_size() {
     else
         stat -f %z "$1"
     fi
+}
+
+rfc_2822_date() {
+    LC_ALL=C date -u "+%a, %d %b %Y %H:%M:%S UTC"
+}
+
+append_release_entry() {
+    file_path=$1
+    file_name=$2
+
+    printf ' %s %s %s\n' "$(hash_md5 "$file_path")" "$(file_size "$file_path")" "$file_name" >> "$RELEASE_FILE"
+}
+
+append_release_sha1_entry() {
+    file_path=$1
+    file_name=$2
+
+    printf ' %s %s %s\n' "$(hash_sha1 "$file_path")" "$(file_size "$file_path")" "$file_name" >> "$RELEASE_FILE"
+}
+
+append_release_sha256_entry() {
+    file_path=$1
+    file_name=$2
+
+    printf ' %s %s %s\n' "$(hash_sha256 "$file_path")" "$(file_size "$file_path")" "$file_name" >> "$RELEASE_FILE"
 }
 
 extract_control() {
@@ -108,6 +141,37 @@ done < "$TMP_DIR/deb-list.txt"
 
 gzip -c "$PACKAGES_FILE" > "$PACKAGES_GZ_FILE"
 
+cat > "$RELEASE_FILE" <<EOF
+Origin: $REPO_NAME
+Label: $REPO_NAME
+Suite: $REPO_SUITE
+Codename: $REPO_CODENAME
+Version: $REPO_VERSION
+Architectures: $REPO_ARCHITECTURES
+Components: $REPO_COMPONENTS
+Description: $REPO_DESCRIPTION
+Date: $(rfc_2822_date)
+MD5Sum:
+EOF
+
+append_release_entry "$PACKAGES_FILE" "Packages"
+append_release_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+
+cat >> "$RELEASE_FILE" <<EOF
+SHA1:
+EOF
+
+append_release_sha1_entry "$PACKAGES_FILE" "Packages"
+append_release_sha1_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+
+cat >> "$RELEASE_FILE" <<EOF
+SHA256:
+EOF
+
+append_release_sha256_entry "$PACKAGES_FILE" "Packages"
+append_release_sha256_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+
 echo "Updated:"
 echo "  $PACKAGES_FILE"
 echo "  $PACKAGES_GZ_FILE"
+echo "  $RELEASE_FILE"

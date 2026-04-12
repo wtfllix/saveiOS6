@@ -1,0 +1,18 @@
+Origin: Lonsdaleite
+Label: Lonsdaleite
+Suite: stable
+Codename: ios6things
+Version: 1.0
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: Lonsdaleite package repository
+Date: Sun, 12 Apr 2026 10:01:02 UTC
+MD5Sum:
+ 7d0469b2b0b37fdf298111e9a2573f5d 8946 Packages
+ 30bad37055bf25b1900ecb6bb05f549b 3017 Packages.gz
+SHA1:
+ 4bc45a22a8491b53638f28a2d59c6a5a2688c19e 8946 Packages
+ 1800901cd94ff51439a73d92c907e910a3569dd2 3017 Packages.gz
+SHA256:
+ 3826a88154f0ee5a40329f1090e40dc01532098c751698765ea64f0e30530196 8946 Packages
+ ef5f7816a21cc38fe02f06758cb896c85b6dce10b67c2dd140641989c152fc94 3017 Packages.gz
