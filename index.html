@@ -78,6 +78,51 @@
             color: #888;
         }
 
+        .ipa-section {
+            max-width: 400px;
+            margin: 16px auto 0;
+            padding: 16px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .section-title {
+            margin: 0 0 6px;
+            font-size: 18px;
+            color: #111;
+        }
+
+        .section-subtitle {
+            margin: 0 0 14px;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn-download {
+            background-color: #1f7a4c;
+            text-align: center;
+        }
+
+        .meta-list,
+        .step-list {
+            margin: 12px 0 0;
+            padding-left: 18px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .ipa-link {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+        }
+
         .footer {
             margin-top: 20px;
             font-size: 12px;
@@ -110,6 +155,31 @@
         <a class="btn btn-secondary" href="/certificates/">查看完整证书列表</a>
 
         <p class="fix-note">安装后请在：设置 &gt; 通用 &gt; 关于本机 &gt; 证书信任设置 中开启完全信任。若系统版本较老，优先尝试证书包。</p>
+    </div>
+
+    <div class="ipa-section">
+        <h2 class="section-title">IPA 托管</h2>
+        <p class="section-subtitle">这里提供越狱设备可直接下载的 IPA 文件，适合配合 AppSync、Filza 或其他本地安装方式使用。</p>
+
+        <a class="btn btn-download" href="/Phoenix6.ipa" download>下载 Phoenix 6.0 IPA</a>
+
+        <ul class="meta-list">
+            <li>应用名称：Phœnix</li>
+            <li>Bundle ID：supplies.wall.phoenix</li>
+            <li>文件大小：约 22 MB</li>
+            <li>SHA-256：d7e5e84e4081b6e138d2f3ed5bb68ff944164e7483a9962c32b08b37e57fa161</li>
+        </ul>
+
+        <ol class="step-list">
+            <li>在越狱设备上点击下载，保存 IPA 文件。</li>
+            <li>使用 Filza、AppInst 或其他已安装的本地安装工具打开该文件。</li>
+            <li>如果安装失败，请先确认设备已安装 AppSync 或等效补丁。</li>
+        </ol>
+
+        <p class="ipa-link">
+            直链地址：<br>
+            <strong>https://repo.lonsdaleite.cc/Phoenix6.ipa</strong>
+        </p>
     </div>
 
     <div class="footer">
