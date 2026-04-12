@@ -1,0 +1,44 @@
+Bypass Activation Lock and Downgrade iPhone 4s to iOS 6.1.3 (2026)
+
+When I got an old iPhone 4s with an activation lock, I wanted to both bypass it and downgrade to iOS 6.1.3.
+Here is the method I used.
+
+1. Prepare the Raspberry Pi Pico
+Get a Raspberry Pi Pico and copy the 8940 file to the Pico drive.
+Press the BOOTSEL button on the Pico and connect it to your Mac.
+A drive will appear. Copy the file to the drive.
+The drive will disappear instantly — this means the file has been flashed to the Pico.
+The LED on the Pico should now flash once per second.
+2. Enter PwnDFU Mode
+Put the iPhone 4s into DFU mode.
+Power the Pico and connect the iPhone once the LED is flashing.
+The LED will blink quickly at first, then slow down to two flashes per second.
+At this point the iPhone should be in pwnDFU mode.
+3. Use Legacy iOS Kit
+Use Legacy iOS Kit to downgrade the device or bypass the activation lock.
+iOS 9 Activation Lock Bypass
+
+Run the following commands:
+
+./mount.sh
+mv /mnt2/Applications/Setup.app /mnt2/Applications/Setup.app.bak
+reboot
+iOS 6 Activation Lock Bypass
+Run
+./mount.sh
+Make sure the target device has an untethered jailbreak.
+Enter pwnDFU mode, boot an SSH ramdisk, SSH into the device, and mount the system partition.
+This can all be done using Legacy iOS Kit, which is a powerful tool for legacy iDevices.
+If you are working with a CoolBooter partition, run:
+mount_hfs /dev/disk0s1s3 /mnt1
+
+instead of mount.sh.
+
+Replace the original file:
+/mnt1/usr/libexec/lockdownd
+
+with the patched version.
+
+Set permissions:
+chmod 0755 /mnt1/usr/libexec/lockdownd
+Reboot the device.
