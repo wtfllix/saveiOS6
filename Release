@@ -6,13 +6,13 @@ Version: 1.0
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: Lonsdaleite package repository
-Date: Sun, 12 Apr 2026 10:01:02 UTC
+Date: Tue, 14 Apr 2026 02:49:13 UTC
 MD5Sum:
- 7d0469b2b0b37fdf298111e9a2573f5d 8946 Packages
- 30bad37055bf25b1900ecb6bb05f549b 3017 Packages.gz
+ 0ef5d6c5715eacea0d8295a4eab642c5 9572 Packages
+ 05a2bf711ba36f29092321c1cd4f663b 3136 Packages.gz
 SHA1:
- 4bc45a22a8491b53638f28a2d59c6a5a2688c19e 8946 Packages
- 1800901cd94ff51439a73d92c907e910a3569dd2 3017 Packages.gz
+ d9e51da3b46be22c88239009f7a19fd7c258b3ee 9572 Packages
+ 1f7441320d143ac22f117d074cc2daf60aad0682 3136 Packages.gz
 SHA256:
- 3826a88154f0ee5a40329f1090e40dc01532098c751698765ea64f0e30530196 8946 Packages
- ef5f7816a21cc38fe02f06758cb896c85b6dce10b67c2dd140641989c152fc94 3017 Packages.gz
+ 40a12f879bb5a6196700b4b4aaa9d6dc47fdcebe31868115e157722c96741506 9572 Packages
+ 21d30f09f46d0658bafdcda7e5c7df4d1ec04b0b075693ffff05a0587c681c43 3136 Packages.gz

@@ -111,6 +111,21 @@ SHA256: a1cc1907e4c0a62325ddf0654796dcaa3623ea57db0c9456125c9e0744caa1c3
 Package: com.coolbooter.coolbootercli
 Name: CoolBooter CLI
 Depends: xpwn, zip, unzip, ldid, diskdev-cmds, wget, firmware (>= 5.0)
+Version: 0.8.4-release
+Architecture: iphoneos-arm
+Description: CoolBooter is an all-in-one dual booting utility for jailbroken 32 bit iOS devices.
+Maintainer: CoolBooter <coolbooterios@gmail.com>
+Author: CoolBooter <coolbooterios@gmail.com>
+Section: System
+Filename: debs/com.coolbooter.coolbootercli-0.8.4-release.deb
+Size: 15796124
+MD5sum: 52bfbb246184ee5905b20da215ea391d
+SHA1: 2ce33784fdb5935a92a4e0cfe74724b32da057f0
+SHA256: 65586af4f58bbefb37d4c4dba09b02ca773c3e88b628bebcff798d2b5db091a7
+
+Package: com.coolbooter.coolbootercli
+Name: CoolBooter CLI
+Depends: xpwn, zip, unzip, ldid, diskdev-cmds, wget, firmware (>= 5.0)
 Version: 1.0-release
 Architecture: iphoneos-arm
 Description: CoolBooter is an all-in-one dual booting utility for jailbroken 32 bit iOS devices.
