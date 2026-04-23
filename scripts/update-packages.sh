@@ -90,7 +90,7 @@ extract_control() {
 
     control_archive=$(
         ar t "$deb_file" | awk '
-            $0 ~ /^control\.tar\.(gz|xz|bz2)$/ { print; exit }
+            $0 ~ /^control\.tar(\.(gz|xz|bz2))?$/ { print; exit }
         '
     )
 
@@ -108,6 +108,9 @@ extract_control() {
             ;;
         *.bz2)
             ar p "$deb_file" "$control_archive" | tar -xjOf - ./control > "$extract_dir/control"
+            ;;
+        control.tar)
+            ar p "$deb_file" "$control_archive" | tar -xOf - ./control > "$extract_dir/control"
             ;;
         *)
             echo "Unsupported control archive format: $control_archive" >&2
