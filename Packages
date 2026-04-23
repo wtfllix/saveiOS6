@@ -163,13 +163,13 @@ Author: lx
 Section: Applications
 Depends: firmware (>= 6.0)
 Architecture: iphoneos-arm
-Version: 0.1.0~rc1-9+debug
-Installed-Size: 5444
-Filename: debs/com.wtfllix.legacychatapp_0.1.0.deb
-Size: 2194186
-MD5sum: 41a38351c08eabb81caa7f27926617d8
-SHA1: 1a29d77b6873ee49ada9ab23a645827d0b0ed25b
-SHA256: affa3253b56d75a89d9a31155ea5a15eebe802cd9222a5b0bac9ed588b1ced5c
+Version: 0.1.1-1+debug
+Installed-Size: 5440
+Filename: debs/com.wtfllix.legacychatapp_0.1.1-1+debug_iphoneos-arm.deb
+Size: 2193940
+MD5sum: 19fdc2bccedad1219227b3df4e267f35
+SHA1: 979089ac56ab7ad5152a0d4dd618322befb7d870
+SHA256: 25987f188de2fa214990071eba7de6b346176bedd708477370b4cb7a992b6498
 
 Package: com.officialscheduler.mterminal
 Name: MTerminal

@@ -54,3 +54,4 @@
 
 - [ROADMAP.md](/Users/lx/projects/ios6things/ios6chatbox/ROADMAP.md)
 - [ARCHITECTURE.md](/Users/lx/projects/ios6things/ios6chatbox/ARCHITECTURE.md)
+- [DEVELOPMENT.md](/Users/lx/projects/ios6things/ios6chatbox/DEVELOPMENT.md)
