@@ -20,7 +20,7 @@ iOS 9 Activation Lock Bypass
 
 Run the following commands:
 
-./mount.sh
+./mount.shYF390-0HF8P-M81RQ-2DXQE-M2UT6
 mv /mnt2/Applications/Setup.app /mnt2/Applications/Setup.app.bak
 reboot
 iOS 6 Activation Lock Bypass
