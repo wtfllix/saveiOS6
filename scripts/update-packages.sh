@@ -6,6 +6,8 @@ ROOT_DIR=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
 DEBS_DIR="$ROOT_DIR/debs"
 PACKAGES_FILE="$ROOT_DIR/Packages"
 PACKAGES_GZ_FILE="$ROOT_DIR/Packages.gz"
+PACKAGES_BZ2_FILE="$ROOT_DIR/Packages.bz2"
+PACKAGES_XZ_FILE="$ROOT_DIR/Packages.xz"
 RELEASE_FILE="$ROOT_DIR/Release"
 TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/saveios6-packages.XXXXXX")
 REPO_NAME=${REPO_NAME:-Lonsdaleite}
@@ -84,6 +86,56 @@ append_release_sha256_entry() {
     printf ' %s %s %s\n' "$(hash_sha256 "$file_path")" "$(file_size "$file_path")" "$file_name" >> "$RELEASE_FILE"
 }
 
+normalize_control() {
+    control_file=$1
+
+    awk '
+        BEGIN {
+            preferred_count = split("Package Name Version Architecture Description Section Depends Pre-Depends Conflicts Provides Replaces Maintainer Author Homepage Depiction Sponsor Installed-Size Priority Essential Tag Icon", preferred_order, " ")
+        }
+
+        /^[^[:space:]][^:]*:/ {
+            field = substr($0, 1, index($0, ":") - 1)
+            value = substr($0, index($0, ":") + 1)
+            sub(/^[ \t]+/, "", value)
+
+            if (!(field in seen)) {
+                input_order[++input_count] = field
+                seen[field] = 1
+            }
+
+            fields[field] = field ": " value
+            current_field = field
+            next
+        }
+
+        /^[ \t]/ {
+            if (current_field != "") {
+                fields[current_field] = fields[current_field] "\n" $0
+            }
+            next
+        }
+
+        END {
+            for (i = 1; i <= preferred_count; i++) {
+                field = preferred_order[i]
+                if (field in fields) {
+                    print fields[field]
+                    printed[field] = 1
+                }
+            }
+
+            for (i = 1; i <= input_count; i++) {
+                field = input_order[i]
+                if (!(field in printed)) {
+                    print fields[field]
+                    printed[field] = 1
+                }
+            }
+        }
+    ' "$control_file"
+}
+
 extract_control() {
     deb_file=$1
     extract_dir=$2
@@ -134,7 +186,7 @@ while IFS= read -r deb_file; do
 
     rel_path=${deb_file#"$ROOT_DIR"/}
 
-    cat "$pkg_tmp/control" >> "$PACKAGES_FILE"
+    normalize_control "$pkg_tmp/control" >> "$PACKAGES_FILE"
     printf 'Filename: %s\n' "$rel_path" >> "$PACKAGES_FILE"
     printf 'Size: %s\n' "$(file_size "$deb_file")" >> "$PACKAGES_FILE"
     printf 'MD5sum: %s\n' "$(hash_md5 "$deb_file")" >> "$PACKAGES_FILE"
@@ -143,6 +195,8 @@ while IFS= read -r deb_file; do
 done < "$TMP_DIR/deb-list.txt"
 
 gzip -c "$PACKAGES_FILE" > "$PACKAGES_GZ_FILE"
+bzip2 -c "$PACKAGES_FILE" > "$PACKAGES_BZ2_FILE"
+xz -c "$PACKAGES_FILE" > "$PACKAGES_XZ_FILE"
 
 cat > "$RELEASE_FILE" <<EOF
 Origin: $REPO_NAME
@@ -159,6 +213,8 @@ EOF
 
 append_release_entry "$PACKAGES_FILE" "Packages"
 append_release_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+append_release_entry "$PACKAGES_BZ2_FILE" "Packages.bz2"
+append_release_entry "$PACKAGES_XZ_FILE" "Packages.xz"
 
 cat >> "$RELEASE_FILE" <<EOF
 SHA1:
@@ -166,6 +222,8 @@ EOF
 
 append_release_sha1_entry "$PACKAGES_FILE" "Packages"
 append_release_sha1_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+append_release_sha1_entry "$PACKAGES_BZ2_FILE" "Packages.bz2"
+append_release_sha1_entry "$PACKAGES_XZ_FILE" "Packages.xz"
 
 cat >> "$RELEASE_FILE" <<EOF
 SHA256:
@@ -173,8 +231,12 @@ EOF
 
 append_release_sha256_entry "$PACKAGES_FILE" "Packages"
 append_release_sha256_entry "$PACKAGES_GZ_FILE" "Packages.gz"
+append_release_sha256_entry "$PACKAGES_BZ2_FILE" "Packages.bz2"
+append_release_sha256_entry "$PACKAGES_XZ_FILE" "Packages.xz"
 
 echo "Updated:"
 echo "  $PACKAGES_FILE"
 echo "  $PACKAGES_GZ_FILE"
+echo "  $PACKAGES_BZ2_FILE"
+echo "  $PACKAGES_XZ_FILE"
 echo "  $RELEASE_FILE"
